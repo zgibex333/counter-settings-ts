@@ -1,5 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .App {
   text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+
+
+body {
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -35,4 +55,112 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.counter-screen {
+  padding: 1.5rem;
+  border: 2px solid #61dafb;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  color: #61dafb;
+  font-weight: 700;
+}
+
+.counter {
+  width: 400px;
+  border: 2px solid #61dafb;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.counter-settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.counter-settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+  gap: 2rem;
+  border: 2px solid #61dafb;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counter-value {
+  position: relative;
+  height: 124px;
+}
+
+.counter-value p {
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+
+button {
+  background-color: #61dafb;
+  border: none;
+  padding: 0.25rem;
+  color: #282c34;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #05252d;
+  color: white;
+}
+
+button:disabled {
+  opacity: 40%;
+  cursor: auto;
+}
+
+label {
+  font-size: 1.5rem;
+  color: #61dafb;
+  font-weight: 700;
+}
+
+input {
+  text-align: center;
+  width: 40%;
+  padding: 0.25rem;
+  border: #61dafb solid 3px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-size: 3rem;
+}
+
+.error-input {
+  outline: red solid 3px;
+  color: red;
+  border:none;
+}
+
+.danger-text {
+  color: red;
 }
