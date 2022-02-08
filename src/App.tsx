@@ -8,6 +8,7 @@ function App() {
   const [startValue, setStartValue] = useState<string>("0");
   const [maxValue, setmaxValue] = useState<string>("5");
   const [defaulSettings, setDefaultSettings] = useState<boolean>(true);
+  const [showSettings, setShowSettings] = useState<boolean>(false);
 
   useEffect(() => {
     if (localStorage.getItem("counter")) {
@@ -30,6 +31,10 @@ function App() {
       if (settings) {
         setDefaultSettings(JSON.parse(settings));
       }
+    }
+    const visible = localStorage.getItem("visible");
+    if (visible) {
+      setShowSettings(JSON.parse(visible));
     }
   });
 
@@ -88,6 +93,8 @@ function App() {
         isError={Number(maxValue) === counterValue}
         incorrectValues={incorrectValues}
         defaultSettings={defaulSettings}
+        showSettingsHandler={setShowSettings}
+        showSettings={showSettings}
       />
       <CounterSettings
         startValue={startValue}
@@ -97,6 +104,7 @@ function App() {
         setSettings={setSettings}
         disabled={defaulSettings}
         incorrectValues={incorrectValues}
+        showSettings={showSettings}
       />
     </div>
   );

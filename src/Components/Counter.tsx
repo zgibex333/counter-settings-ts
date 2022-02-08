@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./Button";
 import { CounterScreen } from "./CounterScreen";
+import { IoSettingsSharp, IoCloseSharp } from "react-icons/io5";
 
 type CounterPropsType = {
   counterValue: number;
@@ -9,6 +10,8 @@ type CounterPropsType = {
   defaultSettings: boolean;
   isError: boolean;
   incorrectValues: boolean;
+  showSettings: boolean;
+  showSettingsHandler: (value: boolean) => void;
 };
 
 export const Counter: React.FC<CounterPropsType> = ({
@@ -18,9 +21,18 @@ export const Counter: React.FC<CounterPropsType> = ({
   isError,
   defaultSettings,
   incorrectValues,
+  showSettings,
+  showSettingsHandler,
 }) => {
+  const changeVisibility = () => {
+    showSettingsHandler(!showSettings);
+    localStorage.setItem("visible", JSON.stringify(!showSettings));
+  };
   return (
-    <div className="counter">
+    <div className="counter" id="counter">
+      <button className="settings-btn" onClick={changeVisibility}>
+        {!showSettings ? <IoSettingsSharp /> : <IoCloseSharp />}
+      </button>
       <CounterScreen
         error={isError && !incorrectValues}
         defaultSettings={defaultSettings}

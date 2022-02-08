@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+#counter {
+  z-index: 2;
+}
 
 .App {
   text-align: center;
@@ -14,8 +17,14 @@
   min-height: 90vh;
   gap: 3rem;
   flex-wrap: wrap;
+  padding: 1rem;
 }
 
+@media (max-width: 400px) {
+  .App {
+    gap: 0;
+  }
+}
 
 
 body {
@@ -67,10 +76,13 @@ body {
 }
 
 .counter {
-  width: 400px;
+  max-width: 400px;
+  flex-basis: 250px;
+  flex-grow: 1;
   border: 2px solid #61dafb;
   padding: 1rem;
   border-radius: 10px;
+  position: relative;
 }
 
 .counter-settings {
@@ -163,4 +175,13 @@ input {
 
 .danger-text {
   color: red;
+}
+
+.settings-btn {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform: translate(-50%, -50%);
 }

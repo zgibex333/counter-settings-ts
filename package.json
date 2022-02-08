@@ -2,6 +2,7 @@
   "name": "counter-with-settings",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zgibex333.github.io/counter-settings-ts",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -10,8 +11,10 @@
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "framer-motion": "^6.2.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
     "react-scripts": "5.0.0",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
@@ -20,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
